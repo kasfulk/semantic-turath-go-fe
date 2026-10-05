@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semantic Turath — Pencarian Nukilan Kitab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <h1 class="brand">Semantic Turath</h1>
+      <p class="tag">Pencarian semantik nukilan kitab — ajukan pertanyaan, dapatkan dalil dari kitab-kitab klasik.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <form id="search-form" class="searchbox" autocomplete="off">
+      <div class="row">
+        <input id="q" name="q" type="search" placeholder="Contoh: dalil maulid itu apa?" aria-label="Pertanyaan pencarian" required />
+        <select id="limit" aria-label="Jumlah hasil">
+          <option value="3">3 hasil</option>
+          <option value="5">5 hasil</option>
+          <option value="10" selected>10 hasil</option>
+          <option value="20">20 hasil</option>
+        </select>
+        <button id="btn-go" type="submit">Cari</button>
+      </div>
+      <p class="hint">Pencarian berjalan di background dan bisa memakan waktu 3–12 menit — halaman boleh ditutup. Simpan Request ID untuk membuka hasil kapan saja. Klik chip keyword untuk mencari ulang.</p>
+    </form>
+    <div id="reqbox" class="reqbox" hidden>
+      <span class="reqbox-label">Request ID</span>
+      <code id="request-id" class="req-id">—</code>
+      <button id="btn-copy" type="button" class="btn-mini">Salin</button>
+      <button id="btn-open" type="button" class="btn-mini">Buka link</button>
+    </div>
+
+    <section id="status" class="status" hidden></section>
+    <section id="stats" class="stats" hidden></section>
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <section id="keywords-sec" class="kw-sec" hidden>
+      <h2>Keyword turunan</h2>
+      <div id="keywords" class="chips"></div>
+    </section>
+
+    <section id="history-sec" class="hist-sec">
+      <h2>Riwayat</h2>
+      <div id="history" class="hist-list"></div>
+    </section>
+  </main>
+
+  <footer class="foot wrap">Semantic Turath · sumber nukilan: Maktabah Syamilah, Ketabonline, Turath.io</footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
